@@ -1,0 +1,52 @@
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.so
+**/*.dylib
+**/*.dll
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+wheels/
+
+# Unit test / coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+coverage.xml
+
+# Documentation
+docs/_build/
+docs/generated/
+
+# Virtual environments
+venv/
+.env
+.venv/
+env/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Numba cache
+.numba_cache/
+
+# Static type checking
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# Benchmarks
+benchmarks/results/
+**/*.prof
