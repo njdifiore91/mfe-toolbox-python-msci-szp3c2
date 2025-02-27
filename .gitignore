@@ -1,0 +1,67 @@
+# Specifies intentionally untracked files to ignore
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+pytest-report.xml
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Documentation
+docs/_build/
+docs/generated/
+
+# Numba specific
+__pycache__/_numba*
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# UI generated files
+resources.py
+*.qrc.py
+ui_*.py
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Type checking
+.mypy_cache/
