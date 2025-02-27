@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel>=0.37.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mfe-toolbox"
+version = "4.0.0"
+description = "A comprehensive suite of Python modules designed for modeling financial time series and conducting advanced econometric analyses"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Kevin Sheppard", email = "kevin.sheppard@example.com"}
+]
+maintainers = [
+    {name = "Kevin Sheppard", email = "kevin.sheppard@example.com"}
+]
+keywords = ["econometrics", "time-series", "volatility", "finance", "garch"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = [
+    "numpy>=1.26.3",
+    "scipy>=1.11.4",
+    "pandas>=2.1.4",
+    "statsmodels>=0.14.1",
+    "numba>=0.59.0",
+    "pyqt6>=6.6.1",
+    "matplotlib>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.21.1",
+    "pytest-benchmark>=4.0.0",
+    "pytest-memray>=1.5.0",
+    "hypothesis>=6.92.1",
+    "mypy>=1.7.0",
+    "black>=23.11.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+]
+docs = [
+    "sphinx>=7.2.0",
+    "sphinx-rtd-theme>=1.3.0",
+    "nbsphinx>=0.9.3",
+    "jupyter>=1.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/example/mfe-toolbox"
+"Bug Tracker" = "https://github.com/example/mfe-toolbox/issues"
+"Documentation" = "https://mfe-toolbox.readthedocs.io/"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["mfe"]
+
+[tool.pytest]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "--strict-markers -v --cov=mfe --cov-report=term-missing"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+
+[[tool.mypy.overrides]]
+module = ["numpy.*", "scipy.*", "pandas.*", "statsmodels.*", "numba.*", "PyQt6.*", "matplotlib.*"]
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+use_parentheses = true
